@@ -1,0 +1,13 @@
+.menu {
+    margin-bottom: 19px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__icons{
+        display: flex;
+        gap: 8px;
+    }
+    &__icon {
+        cursor: pointer;
+    }
+}
