@@ -1,11 +1,9 @@
-@import "./libs/bootstrap-reboot.min.scss";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 @import 'base/mixins';
 @import 'blocks/header';
 @import 'blocks/main';
 @import 'blocks/aside';
 @import 'blocks/map';
-@import 'blocks/menu';
 @import 'blocks/time';
 
 * {
@@ -20,17 +18,18 @@ body{
     font-weight: 400;
     color: #505050;
 }
-.container {
-    @include size(100%, auto);
+.wrapper {
+    gap: 32px;
     padding: 32px;
     background-color: #F1F1F1;
-    display: grid;
-    grid-template-areas: "main main aside";
-    gap: 32px;
-    &.container-second{
-        display: block;
-    }
 }
+.row {
+    margin: 0;
+}
+.col-sm-5, .col-sm-7, .col-sm-6, .col-12, .col-md-8, .col-md-4, .col-lg-9, .col-lg-3  {
+    padding: 0;
+}
+
 
 @import './base/medias.scss';
 

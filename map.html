@@ -5,128 +5,132 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/style.min.css">
 </head>
 <body>
-    <header class="header">
-        <div class="header__top">
-            <a href="./index.html" class="header__link-activity">
-                <div class="header__back">
-                    <div class="header__back-img">
-                        <img src="./assets/icons/back.svg" alt="Back">
+
+    <div class="container-fluid p-0">
+        <header class="header">
+            <div class="row d-flex justify-content-between align-items-center header__top">
+                <a href="./index.html" class="col-sm-5 text-sm-start text-center col-12 nav-link">
+                    <div class="d-flex align-items-center">
+                        <div class="me-2 header__back-img">
+                            <img src="./assets/icons/back.svg" alt="Back">
+                        </div>
+                        <div class="header__logo">
+                            <span class="fw-medium">User pages</span> - Profile
+                        </div>
                     </div>
-                    <div class="header__logo">
-                        <span>User pages</span> - Profile
-                    </div>
-                </div>
-            </a>
-            <nav class="header__info">
-                <ul>
-                    <li class="header__item">
-                        <a href="#">
-                            <div class="header__img">
-                                <img src="./assets/icons/statistics.svg" alt="Statistics">
-                            </div>
-                            <div>Statistics</div>
-                        </a>
-                        
-                    </li>
-
-                    <li class="header__item">
-                        <a href="#">
-                            <div class="header__img">
-                                <img src="./assets/icons/invoices.svg" alt="Invoices">
-                            </div>
-                            <div>Invoices</div>
-                        </a>
-                        
-                    </li>
-
-                    <li class="header__item">
-                        <a href="#">
-                            <div class="header__img">
-                                <img src="./assets/icons/schedule.svg" alt="Schedule">
-                            </div>
-                            <div>Schedule</div>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-
-        <div class="header__bottom">
-            <nav class="header__nav">
-                <div class="header__nav-left">
-                    <ul>
-                        <li class="header__nav-item">
-                            <a class="header__nav-link header__nav-activity" href="./index.html">
-                               <span>Activity</span> 
+                </a>
+                
+                <nav class="col-sm-7 col-12">
+                    <ul class="nav justify-content-sm-end justify-content-center">
+                        <li class="nav-item header__item">
+                            <a href="#" class="nav-link d-flex flex-column align-items-center">
+                                <div class="header__img">
+                                    <img src="./assets/icons/statistics.svg" alt="Statistics">
+                                </div>
+                                <div>Statistics</div>
                             </a>
+                            
                         </li>
-
-                        <li class="header__nav-item header__nav-item_active">
-                            <a class="header__nav-link header__nav-map" href="./map.html">
-                                <span>Map</span> 
+    
+                        <li class="nav-item header__item">
+                            <a href="#" class="nav-link d-flex flex-column align-items-center">
+                                <div class="header__img">
+                                    <img src="./assets/icons/invoices.svg" alt="Invoices">
+                                </div>
+                                <div>Invoices</div>
                             </a>
+                            
                         </li>
-
-                        <li class="header__nav-item">
-                            <a class="header__nav-link header__nav-time" href="./time.html">
-                               <span>Time</span> 
+    
+                        <li class="nav-item header__item">
+                            <a href="#" class="nav-link d-flex flex-column align-items-center">
+                                <div class="header__img">
+                                    <img src="./assets/icons/schedule.svg" alt="Schedule">
+                                </div>
+                                <div>Schedule</div>
                             </a>
                         </li>
                     </ul>
-                </div>
-
-                <div class="header__nav-right">
-                    <ul>
-                        <li class="header__nav-item">
-                            <a class="header__nav-link header__nav-notes" href="#">
-                                <span>Notes</span>
-                            </a>
-                        </li>
-
-                        <li class="header__nav-item">
-                            <a class="header__nav-link header__nav-friends" href="#">
-                                <span>Friends</span> 
-                            </a>
-                        </li>
-
-                        <li class="header__nav-item">
-                            <a class="header__nav-link header__nav-photos" href="#">
-                                <span>Photos</span> 
-                            </a>
-                        </li>
-
-                        <li class="header__nav-item">
-                            <a class="header__nav-link header__nav-settings" href="#"></a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-        
-    </header>
-
-
-    <div class="container container-second">
-        <div class="map">
-            <div class="menu">
-                <div class="menu__text">Basic map</div>
-                <div class="menu__icons">
-                    <div class="menu__icon">
-                        <img src="./assets/icons/arrow-down.svg" alt="Arrow">
-                    </div>
-                    <div class="menu__icon">
-                        <img src="./assets/icons/update.svg" alt="Update">
-                    </div>
-                    <div class="menu__icon">
-                        <img src="./assets/icons/close.svg" alt="Close">
-                    </div>
-                </div>
+                </nav>
             </div>
-           <div class="map__main"></div>
+    
+            <div class="header__bottom">
+                <nav class="row d-flex justify-content-between header__nav">
+                    <div class="col-sm-6 header__nav-left">
+                        <ul class="nav justify-content-sm-start justify-content-center">
+                            <li class="nav-item header__nav-item">
+                                <a class="nav-link px-3 w-100 h-100 py-0 px-3 header__nav-link header__nav-activity" aria-current="page" href="./index.html">
+                                   <span>Activity</span> 
+                                </a>
+                            </li>
+    
+                            <li class="nav-item header__nav-item header__nav-item_active">
+                                <a class="nav-link w-100 h-100 py-0 px-3 header__nav-link header__nav-map" href="./map.html">
+                                    <span>Map</span> 
+                                </a>
+                            </li>
+    
+                            <li class="nav-item header__nav-item">
+                                <a class="nav-link w-100 h-100 py-0 px-3 header__nav-link header__nav-time" href="./time.html">
+                                   <span>Time</span> 
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="col-sm-6 header__nav-right">
+                        <ul class="nav justify-content-sm-end justify-content-center">
+                            <li class="nav-item header__nav-item">
+                                <a class="nav-link w-100 h-100 py-0 px-3 header__nav-link header__nav-notes" href="#">
+                                    <span>Notes</span>
+                                </a>
+                            </li>
+    
+                            <li class="nav-item header__nav-item">
+                                <a class="nav-link w-100 h-100 py-0 px-3 header__nav-link header__nav-friends" href="#">
+                                    <span>Friends</span> 
+                                </a>
+                            </li>
+    
+                            <li class="nav-item header__nav-item">
+                                <a class="nav-link w-100 h-100 py-0 px-3 header__nav-link header__nav-photos" href="#">
+                                    <span>Photos</span> 
+                                </a>
+                            </li>
+    
+                            <li class="py-0 px-2 nav-item header__nav-item">
+                                <a class="nav-link w-100 h-100 py-0 px-3 header__nav-link header__nav-settings" href="#"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            
+        </header>
+        <div class="wrapper">
+            <div class="map w-100">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div>Basic map</div>
+                    <div class="d-flex align-items-center">
+                        <div class="me-2 btn p-0">
+                            <img src="./assets/icons/arrow-down.svg" alt="Arrow">
+                        </div>
+                        <div class="me-2 btn p-0">
+                            <img src="./assets/icons/update.svg" alt="Update">
+                        </div>
+                        <div class="btn p-0">
+                            <img src="./assets/icons/close.svg" alt="Close">
+                        </div>
+                    </div>
+                </div>
+               <div class="map__main"></div>
+            </div>
         </div>
     </div>
+    
 </body>
 </html>
