@@ -23,8 +23,10 @@
     }
     &__footer {
         gap: 32px;
+        margin-bottom: 32px;
         .content__icon{
             cursor: pointer;
+            
         }
     }
     &__item {
@@ -37,10 +39,16 @@
         line-height: 1.375rem;
         .content__icon{
             cursor: pointer;
+            img {
+                transition: all 0.3s ease;
+            }
         }
     }
     &__about {
-        padding: 0px 32px 32px;
+        max-height: 0;
+        padding: 0 32px 0;
+        overflow: hidden;
+        transition: max-height 2s ease;
     }
     &__title {
         font-weight: 400;
@@ -48,4 +56,9 @@
         line-height: 1.375rem;
     }
 
+}
+
+.rotate {
+    transform: rotate(-180deg);
+    transition: transform 0.3s ease;
 }
