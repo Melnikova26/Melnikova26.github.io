@@ -75,7 +75,7 @@
             color: #505050;
             line-height: 40px;
             font-size: 14px;
-            &:hover{
+            &:hover, &:focus, &:active{
                 background-color: #F1F1F1;
                 color: #505050;
                 text-decoration: none;

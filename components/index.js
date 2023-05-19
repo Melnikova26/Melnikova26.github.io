@@ -251,7 +251,7 @@ function renderHomePage(element) {
     const toggleButton = document.querySelectorAll('.content__time + .content__icon'),
             icon = document.querySelectorAll('.content__time + .content__icon img');
             contentContainer = document.querySelectorAll('.content__about');
-    setTimeout(getOpen, 100);
+    setTimeout(getOpen, 500);
     
     function getOpen(num = 0){
         if(!contentContainer[num].style.maxHeight){
