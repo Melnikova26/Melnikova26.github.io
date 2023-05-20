@@ -22,6 +22,7 @@ function renderHomePage(element) {
             toggleButton.forEach((item, i) => {
                 item.addEventListener('click', () => getOpen(i));
             });
-        });  
+        })
+        .catch(error => alert(error.message));  
 }    
 

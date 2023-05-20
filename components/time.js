@@ -5,5 +5,6 @@ function renderTimePage(element, setClock) {
             element.innerHTML = res;
             setClock('.time__main');
             setInterval(() => setClock('.time__main'), 1000);
-        });
+        })
+        .catch(error => alert(error.message));;
 }

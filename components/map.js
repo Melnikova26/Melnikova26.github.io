@@ -23,5 +23,6 @@ function renderMapPage(element) {
             }
 
             ymaps.ready(init);
-        });  
+        })
+        .catch(error => alert(error.message));  
 }
