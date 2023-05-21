@@ -27,7 +27,6 @@ function renderHomePage(element) {
             toggleButton.forEach((item, i) => {
                 item.addEventListener('click', () => getOpen(i));
             });
-            console.log('error');
         })
         .catch(() => {
             element.innerHTML = `<div class="w-50 m-auto">
