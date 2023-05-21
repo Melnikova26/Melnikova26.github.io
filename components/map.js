@@ -1,6 +1,11 @@
 function renderMapPage(element) {
     fetch('./pages/map.html')
-        .then(response => response.text())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Page not found');
+            }
+            return response.text();
+        })
         .then(res => {
             element.innerHTML = res;
             const loading = document.querySelector('.spinner-border');
@@ -24,5 +29,9 @@ function renderMapPage(element) {
 
             ymaps.ready(init);
         })
-        .catch(error => alert(error.message));  
+        .catch(() => {
+            element.innerHTML = `<div class="w-50 m-auto">
+                                    <img class="w-100 h-auto"src="./assets/img/error.png"/>
+                                </div>`;
+        });  
 }
