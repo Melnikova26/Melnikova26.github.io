@@ -19,7 +19,7 @@ function getHeight() {
     });
 }
     
-async function renderHomePage(element, fetchPage) {
+async function renderMainPage(element, fetchPage) {
     await fetchPage('./pages/index.html', element);
     getHeight();
 } 

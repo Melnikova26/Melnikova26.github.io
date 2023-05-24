@@ -15,25 +15,52 @@ async function fetchPage(url, element) {
                                             </div>`;
                     });
 }
-const links = document.querySelectorAll('.header__nav-item'),
-      linkElems = document.querySelectorAll('.header__nav-link');
+const linkElems = document.querySelectorAll('.header__nav-link');
+
 
 linkElems.forEach((item, i) => {
-    if (item.href.slice(item.href.indexOf('#')) === location.hash){
+    item.addEventListener('click', (event) => {
+        event.preventDefault();
+        const path = event.target.closest('.header__nav-link').getAttribute('href');
+        history.pushState({}, '', path);
+        updatePage(path);
         getLink(i);
-        links[i].click();
-    } else if (location.hash == ''){
-        getLink();
-    }
+    });
 })
 
 function getLink(i = 0){
-    links.forEach(item => item.classList.remove('header__nav-item_active'));
-    links[i].classList.add('header__nav-item_active');
+    linkElems.forEach(item => item.classList.remove('header__nav-link_active'));
+    linkElems[i].classList.add('header__nav-link_active');
 }
-links.forEach((item, i) => {
-    item.addEventListener('click', () => getLink(i));
+
+function updatePage(path) {
+    const content = document.getElementById('content');
+    content.innerHTML = '';
+  
+    switch(path){
+        case '#map':
+            getLink(1);
+            renderMapPage(content, fetchPage);
+            break;
+        case '#time':
+            getLink(2);
+            renderTimePage(content, setClock, fetchPage);
+            break;
+        case '#main':
+        default:
+            getLink(0);
+            renderMainPage(content, fetchPage);
+    }
+}
+
+
+window.addEventListener('popstate', () => {
+    const path = location.hash;
+    updatePage(path);
 });
+
+
+// Time
 let startTime;
 
 function getZero(num) {
@@ -66,7 +93,9 @@ function setClock(selector) {
         timer.innerHTML = `${getZero(t.hours)}:${getZero(t.minutes)}:${getZero(t.seconds)}`;
     }
 }
+
 window.addEventListener('load', () => {
+    updatePage(location.hash);
     if (!localStorage.getItem("startTime")) {
         startTime = new Date();
         localStorage.setItem("startTime", startTime);
@@ -74,29 +103,35 @@ window.addEventListener('load', () => {
         startTime = new Date(localStorage.getItem("startTime"));
     }
 });
+
 window.addEventListener("beforeunload", function () {
     localStorage.removeItem("startTime");
 });
 
-function handleHashChange() {
-    const hash = location.hash;
-    const contentElement = document.getElementById('content');
 
-    switch(hash){
-        case '#map':
-            renderMapPage(contentElement, fetchPage);
-            break;
-        case '#time':
-            renderTimePage(contentElement, setClock, fetchPage);
-            break;
-        case '#home':
-        default:
-            renderHomePage(contentElement, fetchPage);
-    }
-}
 
-handleHashChange();
 
-window.addEventListener('hashchange', () => {
-    handleHashChange();
-});
+
+
+// function handleHashChange() {
+//     const hash = location.hash;
+//     const contentElement = document.getElementById('content');
+
+//     switch(hash){
+//         case '#map':
+//             renderMapPage(contentElement, fetchPage);
+//             break;
+//         case '#time':
+//             renderTimePage(contentElement, setClock, fetchPage);
+//             break;
+//         case '#home':
+//         default:
+//             renderHomePage(contentElement, fetchPage);
+//     }
+// }
+
+// handleHashChange();
+
+// window.addEventListener('hashchange', () => {
+//     handleHashChange();
+// });
