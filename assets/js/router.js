@@ -86,11 +86,13 @@ function getTime(startTime) {
 function setClock(selector) {
     const timer = document.querySelector(selector);
     const t = getTime(startTime);
-    if (!t){
-        timer.innerHTML = `00:00:00`;
-    } else {
-        timer.innerHTML = `${getZero(t.hours)}:${getZero(t.minutes)}:${getZero(t.seconds)}`;
-    }
+    if (timer){
+        if (!t){
+            timer.innerHTML = `00:00:00`;
+        } else {
+            timer.innerHTML = `${getZero(t.hours)}:${getZero(t.minutes)}:${getZero(t.seconds)}`;
+        }
+    } 
 }
 
 window.addEventListener('load', () => {
