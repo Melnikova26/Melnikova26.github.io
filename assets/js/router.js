@@ -36,7 +36,6 @@ function getLink(i = 0){
 function updatePage(path) {
     const content = document.getElementById('content');
     content.innerHTML = '';
-  
     switch(path){
         case '#map':
             getLink(1);
@@ -48,7 +47,7 @@ function updatePage(path) {
             break;
         case '#main':
         default:
-            getLink(0);
+            getLink();
             renderMainPage(content, fetchPage);
     }
 }
@@ -107,31 +106,3 @@ window.addEventListener('load', () => {
 window.addEventListener("beforeunload", function () {
     localStorage.removeItem("startTime");
 });
-
-
-
-
-
-
-// function handleHashChange() {
-//     const hash = location.hash;
-//     const contentElement = document.getElementById('content');
-
-//     switch(hash){
-//         case '#map':
-//             renderMapPage(contentElement, fetchPage);
-//             break;
-//         case '#time':
-//             renderTimePage(contentElement, setClock, fetchPage);
-//             break;
-//         case '#home':
-//         default:
-//             renderHomePage(contentElement, fetchPage);
-//     }
-// }
-
-// handleHashChange();
-
-// window.addEventListener('hashchange', () => {
-//     handleHashChange();
-// });
