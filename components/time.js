@@ -4,6 +4,6 @@ function setInfo(setClock) {
 }
     
 async function renderTimePage(element, setClock, fetchPage) {
-    await fetchPage('./pages/time.html', element);
+    await fetchPage('/pages/time.html', element);
     setInfo(setClock);
 }

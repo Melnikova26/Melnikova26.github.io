@@ -37,15 +37,15 @@ function updatePage(path) {
     const content = document.getElementById('content');
     content.innerHTML = '';
     switch(path){
-        case '#map':
+        case '/map.html':
             getLink(1);
             renderMapPage(content, fetchPage);
             break;
-        case '#time':
+        case '/time.html':
             getLink(2);
             renderTimePage(content, setClock, fetchPage);
             break;
-        case '#main':
+        case '/main.html':
         default:
             getLink();
             renderMainPage(content, fetchPage);
@@ -54,7 +54,7 @@ function updatePage(path) {
 
 
 window.addEventListener('popstate', () => {
-    const path = location.hash;
+    const path = location.pathname;
     updatePage(path);
 });
 
@@ -96,7 +96,7 @@ function setClock(selector) {
 }
 
 window.addEventListener('load', () => {
-    updatePage(location.hash);
+    updatePage(location.pathname);
     if (!localStorage.getItem("startTime")) {
         startTime = new Date();
         localStorage.setItem("startTime", startTime);

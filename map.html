@@ -7,11 +7,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/style.min.css">
-    
 </head>
 <body>
     <div class="container-fluid p-0"></div>
-    <script>
+    <script defer>
         fetch('./base.html')
             .then(response => response.text())
             .then(data => {
@@ -22,8 +21,6 @@
     <script src="https://api-maps.yandex.ru/2.1/?apikey=bbcce7df-df37-41f6-a365-d18417d9bbd6&lang=ru_RU">
     </script>
     <script defer src="./components/map.js"></script>
-    <script defer src="./components/index.js"></script>
     <script defer src="./assets/js/router.js"></script>
-    <script defer src="./components/time.js"></script>
 </body>
 </html>
