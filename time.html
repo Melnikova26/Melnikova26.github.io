@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="./assets/css/style.min.css">
 </head>
 <body>
-    <script async>
+    <div class="container-fluid p-0"></div>
+    <script>
         fetch('./base.html')
             .then(response => response.text())
             .then(data => {
-                document.body.innerHTML = data;
+                document.querySelector('.container-fluid').innerHTML = data;
             })
             .catch(error => console.log(error));
     </script>
