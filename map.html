@@ -9,18 +9,20 @@
     <link rel="stylesheet" href="./assets/css/style.min.css">
 </head>
 <body>
-    <div class="container-fluid p-0"></div>
-    <script defer>
+    <script async>
         fetch('./base.html')
             .then(response => response.text())
             .then(data => {
-                document.querySelector('.container-fluid').innerHTML = data;
+                document.body.innerHTML = data;
             })
             .catch(error => console.log(error));
     </script>
+    
     <script src="https://api-maps.yandex.ru/2.1/?apikey=bbcce7df-df37-41f6-a365-d18417d9bbd6&lang=ru_RU">
     </script>
+    <script defer src="./components/index.js"></script>
     <script defer src="./components/map.js"></script>
+    <script defer src="./components/time.js"></script>
     <script defer src="./assets/js/router.js"></script>
 </body>
 </html>
