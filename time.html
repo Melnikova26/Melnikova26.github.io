@@ -1,131 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/style.min.css">
-</head>
-<body>
-    <header class="header">
-        <div class="header__top">
-            <a href="./index.html" class="header__link-activity">
-                <div class="header__back">
-                    <div class="header__back-img">
-                        <img src="./assets/icons/back.svg" alt="Back">
-                    </div>
-                    <div class="header__logo">
-                        <span>User pages</span> - Profile
-                    </div>
-                </div>
-            </a>
-            <nav class="header__info">
-                <ul>
-                    <li class="header__item">
-                        <a href="#">
-                            <div class="header__img">
-                                <img src="./assets/icons/statistics.svg" alt="Statistics">
-                            </div>
-                            <div>Statistics</div>
-                        </a>
-                        
-                    </li>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.min.css" />
+  </head>
+  <body>
+    <div class="container-fluid p-0"></div>
+    <script>
+      fetch("/base.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.querySelector(".container-fluid").innerHTML = data;
+        })
+        .catch((error) => console.log(error));
+    </script>
 
-                    <li class="header__item">
-                        <a href="#">
-                            <div class="header__img">
-                                <img src="./assets/icons/invoices.svg" alt="Invoices">
-                            </div>
-                            <div>Invoices</div>
-                        </a>
-                        
-                    </li>
-
-                    <li class="header__item">
-                        <a href="#">
-                            <div class="header__img">
-                                <img src="./assets/icons/schedule.svg" alt="Schedule">
-                            </div>
-                            <div>Schedule</div>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-
-        <div class="header__bottom">
-            <nav class="header__nav">
-                <div class="header__nav-left">
-                    <ul>
-                        <li class="header__nav-item">
-                            <a class="header__nav-link header__nav-activity" href="./index.html">
-                               <span>Activity</span> 
-                            </a>
-                        </li>
-
-                        <li class="header__nav-item">
-                            <a class="header__nav-link header__nav-map" href="./map.html">
-                                <span>Map</span> 
-                            </a>
-                        </li>
-
-                        <li class="header__nav-item header__nav-item_active">
-                            <a class="header__nav-link header__nav-time" href="./time.html">
-                               <span>Time</span> 
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="header__nav-right">
-                    <ul>
-                        <li class="header__nav-item">
-                            <a class="header__nav-link header__nav-notes" href="#">
-                                <span>Notes</span>
-                            </a>
-                        </li>
-
-                        <li class="header__nav-item">
-                            <a class="header__nav-link header__nav-friends" href="#">
-                                <span>Friends</span> 
-                            </a>
-                        </li>
-
-                        <li class="header__nav-item">
-                            <a class="header__nav-link header__nav-photos" href="#">
-                                <span>Photos</span> 
-                            </a>
-                        </li>
-
-                        <li class="header__nav-item">
-                            <a class="header__nav-link header__nav-settings" href="#"></a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-        
-    </header>
-
-    <div class="container container-second">
-        <div class="time">
-            <div class="menu">
-                <div class="menu__text">Timer</div>
-                <div class="menu__icons">
-                    <div class="menu__icon">
-                        <img src="./assets/icons/arrow-down.svg" alt="Arrow">
-                    </div>
-                    <div class="menu__icon">
-                        <img src="./assets/icons/update.svg" alt="Update">
-                    </div>
-                    <div class="menu__icon">
-                        <img src="./assets/icons/close.svg" alt="Close">
-                    </div>
-                </div>
-            </div>
-           <div class="time__main">00:00:05</div>
-        </div>
-    </div>
-</body>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=bbcce7df-df37-41f6-a365-d18417d9bbd6&lang=ru_RU"></script>
+    <script defer src="./components/index.js"></script>
+    <script defer src="./components/map.js"></script>
+    <script defer src="./components/time.js"></script>
+    <script type="module" defer src="./assets/js/timer.js"></script>
+    <script type="module" defer src="./assets/js/router.js"></script>
+  </body>
 </html>

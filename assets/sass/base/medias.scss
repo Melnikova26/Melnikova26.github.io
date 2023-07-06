@@ -1,22 +1,13 @@
-@media(max-width: 710px){
-    .container {
-        grid-template-areas: "aside"
-                             "main";
+@media (max-width: 410px) {
+  .header {
+    &__top,
+    &__bottom {
+      padding-left: 10px;
+      padding-right: 10px;
     }
-    .profile{
-        justify-self: normal;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-}
-@media(max-width: 496px){
-    .header{
-        &__top{
-        justify-content: center;
-        }
-        &__nav ul {
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-    }
+  }
+  .wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
