@@ -1,81 +1,79 @@
 .profile {
-    gap: 32px;
-    &__icon {
-        cursor: pointer;
-    }
-    &__box {
-        background-color: #fff;
-    }
-    &__info {
-        padding: 32px 50px;
-    }
-    &__avatar {
-        @include size (8.25rem, 8.25rem);
-    }
-    &__name {
-        font-size: 1.125rem;
-        line-height: 21px;
-        
-    }
+  gap: 32px;
+  &__icon {
+    cursor: pointer;
+  }
+  &__box {
+    background-color: #fff;
+  }
+  &__info {
+    padding: 32px 50px;
+  }
+  &__avatar {
+    @include size(8.25rem, 8.25rem);
+  }
+  &__name {
+    font-size: 1.125rem;
+    line-height: 21px;
+  }
 
-    &__item {
-        @include size(1.25rem, 1.25rem);
-    }
+  &__item {
+    @include size(1.25rem, 1.25rem);
+  }
 
-    &__header {
-       padding: 8px 16px 10px;
-       border-bottom: 1px solid #D3D8DE;
-    }
+  &__header {
+    padding: 8px 16px 10px;
+    border-bottom: 1px solid #d3d8de;
+  }
 
-    &__item-icon {
-        @include size(1.5rem, 1.5rem);
-        img {
-            @include size(100%, 100%);
-        }
+  &__item-icon {
+    @include size(1.5rem, 1.5rem);
+    img {
+      @include size(100%, 100%);
     }
-    &__elem {
-        &:nth-child(4){
-            border-bottom: 1px solid #D3D8DE;
-        }
-        .nav-link {
-            color: #505050;
-        }
+  }
+  &__elem {
+    &:nth-child(4) {
+      border-bottom: 1px solid #d3d8de;
     }
+    .nav-link {
+      color: #505050;
+    }
+  }
 
-    &__circle {
-        width: 1.5rem;
-        height: 1rem;
-        border-radius: 8px;
-        font-size: 0.75rem;
-        line-height: 1rem;
-        text-align: center;
-        color: #fff;
+  &__circle {
+    width: 1.5rem;
+    height: 1rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    text-align: center;
+    color: #fff;
+  }
+  &__events {
+    background-color: #47b091;
+  }
+  &__connections {
+    background-color: #e33939;
+  }
+  &__form {
+    &-item {
+      padding: 8px 16px 16px;
     }
-    &__events {
-        background-color: #47B091;
+    &-message {
+      height: 5.5rem;
+      border: 1px solid #d3d8de;
+      resize: none;
+      &::placeholder {
+        color: #8f8f8f;
+      }
     }
-    &__connections {
-        background-color: #E33939;
+    button {
+      height: 2rem;
+      background-color: #5095ec;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 0.875rem;
     }
-    &__form {
-        &-item {
-            padding: 8px 16px 16px;
-        }
-        &-message{
-            height: 5.5rem;
-            border: 1px solid #D3D8DE;
-            resize: none;
-            &::placeholder {
-                color: #8F8F8F;
-            }
-        }
-        button{
-            height: 2rem;
-            background-color: #5095EC;
-            border-radius: 4px;
-            font-weight: 500;
-            font-size: 0.875rem;
-        }
-    }
+  }
 }
-

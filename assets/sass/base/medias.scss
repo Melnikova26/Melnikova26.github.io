@@ -1,12 +1,13 @@
-@media(max-width: 410px){
-    .header{
-        &__top, &__bottom{
-            padding-left: 10px;
-            padding-right: 10px;
-        }
+@media (max-width: 410px) {
+  .header {
+    &__top,
+    &__bottom {
+      padding-left: 10px;
+      padding-right: 10px;
     }
-    .wrapper {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
+  }
+  .wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
